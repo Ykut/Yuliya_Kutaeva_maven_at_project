@@ -17,36 +17,39 @@ import static org.junit.Assert.assertEquals;
 public class ParametrizedTest {
     private Engineer en;
     private int expSkill;
+    private int expAge;
 
-    public ParametrizedTest(Engineer en, int expSkill) {
+    public ParametrizedTest(Engineer en, int expSkill, int expAge) {
         this.en = en;
         this.expSkill = expSkill;
+        this.expAge = expAge;
     }
 
     @Parameterized.Parameters
     public static Collection<Object[]> parameters() {
         return Arrays.asList(
                 new Object[][]{
-                        {new AutomatedEngineer(24, 10), 30},
-                        {new ManualEngineer(24, 10), 20}
+                        {new AutomatedEngineer(24, 10), 30, 24},
+                        {new ManualEngineer(24, 10), 20, 24}
                 }
         );
     }
+
     @Test
-    public void checkDefaultAge(){
-        assertEquals("The age is not correct!", expSkill, en.getAge());
+    public void checkDefaultAge() {
+        assertEquals("The age is not correct!", expAge, en.getAge());
     }
 
     @Test
-    public void checkDefaultSkill(){
+    public void checkDefaultSkill() {
         assertEquals("The age is not correct!", expSkill, en.getSkill());
     }
 
     @Before
-    public void printString(){
+    public void printString() {
         System.out.println("Somestring");
     }
- }
+}
 
 
 
