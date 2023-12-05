@@ -20,9 +20,9 @@ public class WildberriesPart1 {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(), 'Принять')]"))).click();
 
         driver.findElement(By.cssSelector("[aria-label='Главное меню']")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(), 'Дом')]"))).click();
-        driver.findElement(By.xpath("//span[contains(text(), 'Гостиная')]")).click();
-        driver.findElement(By.xpath("//span[contains(text(), 'Коробки для хранения')]")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Дом']"))).click();
+        driver.findElement(By.xpath("//span[text()='Гостиная']")).click();
+        driver.findElement(By.xpath("//span[text()='Коробки для хранения']")).click();
 
         driver.findElement(By.cssSelector("[aria-label='Фильтры']")).click();
 
