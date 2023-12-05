@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 
 public class DayOfWeekUtility {
 
-
     public static String getDayOfWeekNextYear(int plusYears) {
 
         LocalDateTime ldt = LocalDateTime.now().plusYears(plusYears);
